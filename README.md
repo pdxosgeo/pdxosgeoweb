@@ -1,7 +1,7 @@
 # Welcome to the PDX Open Source Github Repo
 You may be wondering what the hell you're doing here so let's get started.
 
-#### Writing Markdown
+## Writing Markdown
 Markdown is a tidy little way of making complex-looking HTML through a simplified syntax. Read more about it [here](http://github.github.com/github-flavored-markdown/).
 
 ## Making Edits
