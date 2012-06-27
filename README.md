@@ -1,4 +1,4 @@
-pdxosgeoweb
-===========
+pdx-os-geo
+==========
 
-The PDX OS Geo website
+Portland Open Source GIS Group
