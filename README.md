@@ -1,17 +1,9 @@
-# Welcome to the PDX Open Source Github Repo
-You may be wondering what the hell you're doing here so let's get started.
+### About
 
-## Writing Markdown
-Markdown is a tidy little way of making complex-looking HTML through a simplified syntax. Read more about it [here](http://github.github.com/github-flavored-markdown/).
+An interactive map showing users of the [Leaflet](http://leaflet.cloudmade.com/) mapping library. Live map at [http://users.leafletjs.com](http://users.leafletjs.com/).
 
-## Making Edits
-Write stuff here about making edits.
+### Dependencies
 
-## Making Commits
-Write stuff here on how to make commits.
-
-## Fixing Mistakes
-Write stuff here on how to fix mistakes.
-
-## Making Noise
-Make some noise.
+- [Leaflet](http://leaflet.cloudmade.com/)
+- [Twitter Bootstrap](http://twitter.github.com/bootstrap/)
+- [PHP with PDO_SQLITE enabled](http://php.net/manual/en/ref.pdo-sqlite.php)

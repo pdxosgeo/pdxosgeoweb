@@ -1,9 +1,319 @@
-<html>
-<head>
-  <title>PDX Open Source GIS Group</title>
-</head>
-<body>
-<h1>This is the Portland Open Source GIS Group Page</h1>
-<p>More to come...</p>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Portland Open Source GIS Group</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="website" content="Map location of next PDXOSGEO meeting Portland, Oregon" />
+    <meta name="keywords" content="GIS, open source, map, mapping, javascript, cloudmade, leaflet" />
+    <meta name="author" content="PDX OS GEO. Original source code: Bryan R. McBride, GISP - http://bryanmcbride.com" />
+
+    <!-- Change this font -->
+    <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="lib/Leaflet/leaflet.css" />
+    <!--[if lte IE 8]><link rel="stylesheet" href="lib/Leaflet/leaflet.ie.css" /><![endif]-->
+
+    <!-- Le styles -->
+    <link href="lib/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="stylesheets/custom.css">
+    <link href="lib/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+      <script type="text/javascript">
+      WebFontConfig = {
+        google: {
+            families: ['Norican::latin']
+        }
+      };
+      (function () {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+      </script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="#">Portland Open Source Geo Group</a>
+          <div class="nav-collapse">
+            <ul class="nav">
+              <li><a data-toggle="modal" href="#aboutModal"><i class="icon-question-sign icon-white"></i> About PDX OS Geo</a></li>
+              <li><a data-toggle="modal" href="#contactModal"><i class="icon-envelope icon-white"></i> Contact Us</a></li>
+              <li><a href="https://github.com/pdxosgeo/pdxosgeoweb" target="_blank"><i class="icon-download icon-white"></i> GitHub Repo</a></li>
+            </ul>
+            <form class="navbar-form pull-right">
+               <span style="padding-right: 20px;"><a class='btn btn-primary btn-small' data-toggle="modal" href="#addmeModal"><i class="icon-plus-sign icon-white"></i> Add a meeting!</a></span>
+               <span><a class='btn btn-danger btn-small' data-toggle="modal" href="#removemeModal"><i class="icon-minus-sign icon-white"></i> Remove your meeting</a></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal hide fade" id="aboutModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Welcome to the PDX Open Source Geo Group!</h3>
+      </div>
+      <div class="modal-body">
+        <h3>Inspiration</h3>
+          <p>Most of the code here is the work of <a href="http://bryanmcbride.com/">Bryan McBride</a> and the projects listed on <a href="http://bryanmcbride.com/">his</a> page. Also, check out his <a href="https://github.com/bmcbride/leaflet-users-map">Github code repository</a> for more info on the bones of this project.</p>
+  
+        <h3>Mapping Meetings</h3>
+          <p>Mapping the meetings is built with:
+            <ul>
+              <li>User Interface: <a href="http://twitter.github.com/bootstrap/" target="_blank">Bootstrap, from Twitter</a></li>
+              <li>Mapping: <a href="http://leaflet.cloudmade.com/" target="_blank">Leaflet</a></li>
+              <li>Database: <a href="http://www.sqlite.org/" target="_blank">SQLite</a></li>
+              <li>Scripting: <a href="http://www.php.net/" target="_blank">PHP</a> & <a href="http://en.wikipedia.org/wiki/JavaScript" target="_blank">JavaScript</a></li>
+            </ul>
+          </p>
+      </div>
+    </div>
+
+    <div class="modal hide fade" id="contactModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Contact Us!</h3>
+      </div>
+      <div class="modal-body">
+        <p><strong>Email:</strong> <a href="mailto: pdxosgeo@pdxosgeo.org">pdxosgeo@pdxosgeo.org</a></p>
+        <p><strong>Twitter:</strong> <a href="https://twitter.com/#!/pdxosgeo">@pdxosgeo</a></p>
+        <p><strong>Website:</strong> <a href="http://pdxosgeo.org">pdxosgeo.org</a></p>
+      </div>
+    </div>
+
+    <div class="modal hide fade" id="addmeModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Add a meeting!</h3>
+      </div>
+      <div class="modal-body">
+        <p>Click on the <strong>Go!</strong> button below to get started.</p>
+        <p>Navigate to your desired location and click on the map to drop a marker and submit your information.</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#" onclick="$('#addmeModal').modal('hide'); initRegistration(); return false;"class="btn btn-primary">Go!</a>
+      </div>
+    </div>
+
+    <div class="modal hide fade" id="insertSuccessModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Success!</h3>
+      </div>
+      <div class="modal-body">
+        <p>Thanks for putting a meeting on the map!</p>
+        <p>You should receive an email shortly with instructions on how to edit your information.</p>
+      </div>
+    </div>
+
+    <div class="modal hide fade" id="removemeModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Remove a meeting</h3>
+      </div>
+      <div class="modal-body">
+        <form class="well">
+          <label>Email</label>
+          <input type="text" class="span3" name="email_remove" id="email_remove">
+          <label>Token</label>
+          <input type="password" class="span3" name="token_remove" id="token_remove"><br>
+          <button type="button" class="btn btn-primary" onclick="removeUser();">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal hide fade" id="removeSuccessModal">
+      <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>Your meeting has been removed. :-(</h3>
+      </div>
+      <div class="modal-body">
+        <p>Your meeting has been removed from the PDX OS Geo Map.</p>
+        <p>Thanks for your interest and feel free to add it back at any time.</p>
+      </div>
+    </div>
+    <div id="map"></div>
+    <div class="geolocation">
+      <a href="#" onclick="geoLocate(); return false;" title="My Location"></a>
+    </div>
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="lib/Leaflet/leaflet.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+      var map, newUser, users, mapbox, firstLoad;
+
+      firstLoad = true;
+
+      users = new L.FeatureGroup();
+      newUser = new L.LayerGroup();
+
+      // change this to mapbox maps
+      mapbox = new L.TileLayer("http://a.tiles.mapbox.com/v3/grafa.map-p1fuxtgt/{z}/{x}/{y}.png", {
+        maxZoom: 17,
+        attribution: 'Tiles Courtesy of <a href="http://www.mapbox.com/" target="_blank">Mapbox</a>. Map data (c) <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors, CC-BY-SA.'
+      });
+
+      map = new L.Map('map', {
+        center: new L.LatLng(45.56, -122.66),
+        zoom: 11,
+        layers: [mapbox, users, newUser]
+      });
+
+      map.addControl(new L.Control.Scale());
+
+      //map.locate({setView: true, maxZoom: 3});
+
+      $(document).ready(function() {
+        $.ajaxSetup({cache:false});
+        $('#map').css('height', ($(window).height() - 40));
+        getUsers();
+      });
+
+      $(window).resize(function () {
+        $('#map').css('height', ($(window).height() - 40));
+      }).resize();
+
+      function geoLocate() {
+        map.locate({setView: true, maxZoom: 17});
+      }
+
+      function initRegistration() {
+        map.addEventListener('click', onMapClick);
+        document.body.style.cursor = 'crosshair';
+        return false;
+      }
+
+      function cancelRegistration() {
+        newUser.clearLayers();
+        document.body.style.cursor = 'default';
+        map.removeEventListener('click', onMapClick);
+      }
+
+      function getUsers() {
+        $.getJSON("get_users.php", function (data) {
+          for (var i = 0; i < data.length; i++) {
+            var location = new L.LatLng(data[i].lat, data[i].lng);
+            var title = "<div style='font-size: 18px; color: #18721B;'>"+ data[i].place +"</div>";
+            var name = data[i].name;
+            var website = data[i].website;
+            var marker = new L.Marker(location);
+            marker.bindPopup("<div style='text-align: center; margin-left: auto; margin-right: auto;'><h3>"+ title +"</h3>" +  "<p>Posted by: " + name + "<br />Location website: <a href='" + website + "'</a>" + website + "</p></div>", {maxWidth: '400'});
+            users.addLayer(marker);
+          }
+        }).complete(function() {
+          if (firstLoad == true) {
+            map.fitBounds(users.getBounds());
+            firstLoad = false;
+          };
+        });
+      }
+
+      function insertUser() {
+        var name = $("#name").val();
+        var email = $("#email").val();
+        var place = $("#place").val();
+        var website = $("#website").val();
+        var lat = $("#lat").val();
+        var lng = $("#lng").val();
+        if (name.length == 0) {
+          alert("Name is required!");
+          return false;
+        }
+        if (email.length == 0) {
+          alert("Email is required!");
+          return false;
+        }
+        var dataString = '&name='+ name + '&email=' + email + '&place=' + place + '&website=' + website + '&lat=' + lat + '&lng=' + lng;
+        $.ajax({
+          type: "POST",
+          url: "insert_user.php",
+          data: dataString,
+          success: function() {
+            cancelRegistration();
+            users.clearLayers();
+            getUsers();
+            $('#insertSuccessModal').modal('show');
+          }
+        });
+        return false;
+      }
+
+      function removeUser() {
+        var email = $("#email_remove").val();
+        var token = $("#token_remove").val();
+        if (email.length == 0) {
+          alert("Email is required!");
+          return false;
+        }
+        if (token.length == 0) {
+          alert("Token is required!");
+          return false;
+        }
+        var dataString = 'email='+ email + '&token=' + token;
+        $.ajax({
+          type: "POST",
+          url: "remove_user.php",
+          data: dataString,
+          success: function(data) {
+            //console.log(data);
+            if (data > 0) {
+              $('#removemeModal').modal('hide');
+              users.clearLayers();
+              getUsers();
+              $('#removeSuccessModal').modal('show');
+            }
+            else {
+              alert("Incorrect email or token. Please try again.");
+            }
+          }
+        });
+        return false;
+      }
+
+      function onMapClick(e) {
+        var markerLocation = new L.LatLng(e.latlng.lat, e.latlng.lng);
+        var marker = new L.Marker(markerLocation);
+        newUser.clearLayers();
+        newUser.addLayer(marker);
+        var form =  '<form id="inputform" enctype="multipart/form-data" class="well">'+
+              '<h3><strong>Meeting Info</strong></h3>'+
+              '<label><strong>Place: </strong></label>'+
+              '<input type="text" class="span3" placeholder="Required" id="place" name="place" />'+
+              '<label><strong>Organizer: </strong><i>Full name preferred.</i></label>'+
+              '<input type="text" class="span3" placeholder="Required" id="name" name="name" />'+
+              '<label><strong>Organizer Email: </strong><i>never shared</i></label>'+
+              '<input type="text" class="span3" placeholder="Required" id="email" name="email" />'+
+              '<label><strong>Location Website: </strong></label>'+
+              '<input type="text" class="span3" placeholder="Optional" id="website" name="website" value="http://" />'+
+              '<input style="display: none;" type="text" id="lat" name="lat" value="'+e.latlng.lat.toFixed(6)+'" />'+
+              '<input style="display: none;" type="text" id="lng" name="lng" value="'+e.latlng.lng.toFixed(6)+'" /><br><br>'+
+              '<div class="row-fluid">'+
+                '<div class="span6" style="text-align:center;"><button type="button" class="btn" onclick="cancelRegistration()">Cancel</button></div>'+
+                '<div class="span6" style="text-align:center;"><button type="button" class="btn btn-primary" onclick="insertUser()">Submit</button></div>'+
+              '</div>'+
+              '</form>';
+        marker.bindPopup(form).openPopup();
+      }
+    </script>
+  </body>
 </html>
