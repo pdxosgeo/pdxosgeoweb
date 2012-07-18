@@ -8,7 +8,7 @@ $lat = htmlspecialchars(trim($_POST['lat']));
 $lng = htmlspecialchars(trim($_POST['lng']));
 $token = mt_rand(100000, 999999);
 
-$db = new PDO('sqlite:leaflet.sqlite');
+$db = new PDO('sqlite:data/leaflet.sqlite');
 $db->exec("INSERT INTO users (name, email, website, place, lat, lng, token) VALUES ('$name', '$email', '$website', '$place', '$lat', '$lng', '$token');");
 $db = NULL;
 
