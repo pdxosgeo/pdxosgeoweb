@@ -171,13 +171,13 @@
         /* font-size: 1.5em; */
         margin-bottom: 10px;
       }
-      /* Footer */
-      .footer {
+      /* join */
+      .join {
         padding: 20px;
         text-align: center;
         background: #ddd;
       }
-      .footer h2 {
+      .join h2 {
         font-family: "Squada One", sans-serif;
         font-weight: 400;
         font-size: 3em;
@@ -187,25 +187,43 @@
         /* font-size: 1.5em; */
         margin-bottom: 10px;
       }
-      .footer .logos {
+      .join .logos {
         display: flex;
         /* column */
         flex-direction: row;
         justify-content: space-evenly;
         align-items: center;
-
       }
-      .footer img {
+      .join img {
         /* padding: 20px; */
         max-width: 150px;
-      } 
+      }
+      .about {
+        overflow: hidden;
+        background-color: #333;
+        padding: 60px;
+        margin: 0;
+        top: 0;
+        color: white;
+        text-align: center;
+      }
+      .about h2 {
+        font-family: "Squada One", sans-serif;
+        font-weight: 400;
+        font-size: 3em;
+        font-style: normal;
+        margin-top: 0;
+        font-weight: 200;
+        /* font-size: 1.5em; */
+        margin-bottom: 10px;
+      }
 
       /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
       @media screen and (max-width: 700px) {
         .row {
           flex-direction: column;
         }
-        .footer .logos {
+        .join .logos {
           align-items: center;
           justify-content: center;
           flex-direction: column;
@@ -236,7 +254,7 @@
       <a href="#" class="active">Home</a>
       <a href="#">Past Meetings</a>
       <a href="#">Links</a>
-      <a href="#" class="right">Contact</a>
+      <a href="#about" class="right">About</a>
     </div>
 
     <div class="row">
@@ -271,13 +289,29 @@
         </ul>
       </div>
     </div>
-    <div class="footer">
+    <div class="join">
       <h2>Join Us!</h2>
       <!-- show a list of 3 logos that are centered and inline -->
       <div class="logos">
-        <a href="https://thespatialcommunity.slack.com/"><img src="./assets/img/logos/slack.png" alt="Slack Logo" /></a>
-        <a href="https://groups.google.com/g/pdx-osgeo"><img src="./assets/img/logos/google.png" alt="Twitter Logo" /></a>
-        <a href="https://github.com/pdxosgeo/pdxosgeoweb"><img src="./assets/img/logos/github.png" alt="Github Logo" /></a>
+        <a href="https://thespatialcommunity.slack.com/"
+          ><img src="./assets/img/logos/slack.png" alt="Slack Logo"
+        /></a>
+        <a href="https://groups.google.com/g/pdx-osgeo"
+          ><img src="./assets/img/logos/google.png" alt="Twitter Logo"
+        /></a>
+        <a href="https://github.com/pdxosgeo/pdxosgeoweb"
+          ><img src="./assets/img/logos/github.png" alt="Github Logo"
+        /></a>
+      </div>
+    </div>
+    <div id="about" class="about">
+      <h2>About PDXOSGEO</h2>
+      <!-- show a list of 3 logos that are centered and inline -->
+      <div>
+        The Portland chapter of OSGeo is focused on learning and teaching about
+        open data,maps, and spatial applications. We like code and good
+        conversation.
+      </div>
     </div>
   </body>
 </html>
