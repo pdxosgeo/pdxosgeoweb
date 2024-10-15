@@ -69,7 +69,7 @@
       /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
       .navbar {
         overflow: hidden;
-        background-color: #333;
+        background-color: #666;
         position: sticky;
         /* position: -webkit-sticky; */
         top: 0;
@@ -100,10 +100,10 @@
       }
 
       /* Active/current link */
-      .navbar a.active {
+      /* .navbar a.active {
         background-color: #666;
         color: white;
-      }
+      } */
 
       /* Column container */
       .row {
@@ -125,17 +125,16 @@
         font-family: "Squada One", sans-serif;
         font-weight: 600;
         font-style: normal;
-        font-size: 3em;
+        font-size: 2em;
         margin-top: 0;
         font-weight: 200;
-        /* font-size: 1.5em; */
         margin-bottom: 10px;
       }
 
       .side h3 {
         margin-top: 0;
         font-weight: 200;
-        /* font-size: 1.5em; */
+        font-size: 1em;
         margin-bottom: 10px;
       }
 
@@ -147,11 +146,11 @@
         width: 100%;
         border-radius: 5px;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        /* align everything center */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      }
+
+      .side .motm img {
+        width: 100%;
+        border-radius: 5px;
       }
 
       /* Main column */
@@ -160,6 +159,7 @@
         flex: 70%;
         background-color: white;
         padding: 20px;
+        line-height: 1.5em;
       }
       .main h2 {
         font-family: "Squada One", sans-serif;
@@ -170,6 +170,13 @@
         font-weight: 200;
         /* font-size: 1.5em; */
         margin-bottom: 10px;
+      }
+      .main .topic {
+        font-weight: 600;
+      }
+      .main .byline {
+        font-style: italic;
+        font-size: 0.75em;
       }
       /* join */
       .join {
@@ -240,7 +247,10 @@
     </style>
   </head>
   <body>
-    <div class="banner">Next Meeting: TBD</div>
+    <div class="banner">
+      Next Meeting: Wednesday 10/23 6:30pm | Hot Lips Pizza @ the Natural
+      Capital Center 721 NW 9th Ave, Portland OR
+    </div>
     <div class="header">
       <img src="./assets/img/logo.png" alt="PDXOSGEO Logo" class="logo" />
       <h1 class="squada-one-regular">PDXOSGEO</h1>
@@ -249,20 +259,19 @@
 
     <div class="navbar">
       <a href="#" class="active">Home</a>
-      <a href="#">Past Meetings</a>
-      <a href="#">Links</a>
+      <a href="#past-meetings">Past Meetings</a>
+      <a href="#join">Join</a>
       <a href="#about" class="right">About</a>
     </div>
 
     <div class="row">
       <div class="side">
         <h2>Map of the Month</h2>
-        <h3>NCDOT Current DriveNC/TIMS Incidents Dashboard</h3>
         <div class="motm">
           <!-- <img src="./assets/img/motm/earth-day.png" alt="earth day map" /> -->
           <a href="./assets/img/motm/2024-10-NCDOT.png">
             <img
-              src="./assets/img/motm/2024-10-NCDOT-thumb.png"
+              src="./assets/img/motm/2024-10-NCDOT.png"
               alt="NCDOT Current DriveNC/TIMS Incidents Dashboard"
           /></a>
         </div>
@@ -274,39 +283,35 @@
           showing hundreds of closures and incidents across the state of North
           Carolina during the aftermath of Hurricane Helene.
         </p>
-        <h4>2024</h4>
+        <h4>Past Maps</h4>
         <p>
-          <a href="./assets/img/motm/2024-09-make-your-mark.png">September</a>
+          <a href="./assets/img/motm/2024-09-make-your-mark.png"
+            >September 2024</a
+          >
         </p>
       </div>
       <div class="main">
-        <h2>Next Meeting</h2>
-        <p>TBD</p>
-        <p>Disaster Relief Mapping</p>
+        <h2>October Meeting 10/23</h2>
+        <p class="byline">
+          Wednesday 10/23 6:30pm | Hot Lips Pizza @ the Natural Capital Center
+          721 NW 9th Ave, Portland OR.
+        </p>
+        <p>
+          We're covering a number of topics this month, including a debrief on
+          the NACIS Annual meeting, a lightning round of map demos, GIS Day
+          planning, and a brief workshop on
+          <span class="topic"
+            >OpenStreetMap's Tasking Manager to learn how you can get involved
+            in disaster relief mapping</span
+          >.
+        </p>
         <img
           src="./assets/img/motm/2024-10-mtg.png"
           alt="Emergency personnel are observed on a road as the Rocky Broad River merges into Lake Lure, carrying debris from Chimney Rock, North Carolina"
           width="100%"
         />
-        <p>Melissa Sue Gerrits, Getty Images</p>
-        <p>
-          OpenStreetMap has been an integral resource in disaster relief
-          mapping. With a number of events making headlines, we'll cover a
-          number of tools and resources to help you get involved like the
-          <a href="https://tasks.openstreetmap.us/"
-            >OpenStreetMap US Tasking Manager</a
-          >.
-        </p>
-        <p>Other topics</p>
-        <ul>
-          <li>Lightning round of map demos</li>
-          <li>GIS Day is Nov 20. Planning is underway.</li>
-          <li>
-            Map of the Month: The NCDOT Current DriveNC/TIMS Incidents Dashboard
-          </li>
-          <li>Pizza 🍕🍺</li>
-        </ul>
-        <h2>Last Meeting</h2>
+        <p class="byline">Melissa Sue Gerrits, Getty Images</p>
+        <h2 id="past-meetings">Last Meeting</h2>
         <p>
           Wednesday, Sep 18, 2024 @ 6:30pm | Hot Lips Pizza @ the Natural
           Capital Center 721 NW 9th Ave, Portland OR
@@ -326,7 +331,7 @@
         </p>
       </div>
     </div>
-    <div class="join">
+    <div class="join" id="join">
       <h2>Join Us!</h2>
       <!-- show a list of 3 logos that are centered and inline -->
       <div class="logos">
