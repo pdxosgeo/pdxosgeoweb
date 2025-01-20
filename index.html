@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <style>
+      :root {
+        --pdx-base-color: #53c3ba;
+      }
+
       * {
         box-sizing: border-box;
       }
@@ -200,6 +204,9 @@
         color: white;
         text-align: center;
       }
+      .about a {
+        color: var(--pdx-base-color);
+      }
       .about h2 {
         font-family: "Squada One", sans-serif;
         font-weight: 400;
@@ -209,6 +216,13 @@
         font-weight: 200;
         /* font-size: 1.5em; */
         margin-bottom: 10px;
+      }
+      .about div.equity h3 {
+        text-align: left
+      }
+      .about div.equity p {
+        text-align: left;
+        margin: .5rem 5vw .5rem 5vw;
       }
 
       /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
@@ -347,6 +361,32 @@ Tim Welch will present Turf.js, a Javascript library for spatial analysis.  He'l
         The Portland chapter of OSGeo is focused on learning and teaching about
         open data,maps, and spatial applications. We like code and good
         conversation.
+      </div>
+      <div class="equity">
+        <h3>PDXOSGEO is a Safe Space: All Are Invited</h3>
+        <p>
+          At PDXOSGEO we acknowledge that we live, map, and hack on 
+          <a href="https://native-land.ca" target="_blank">stolen land</a> 
+           in a world where there is inequitable access to technologic 
+          hardware and knowledge, and that negative consequences are unfairly 
+          burdened on marginalized communities, particularly Indigenous, 
+          Black, and other minoritized racial communities. Our group strives 
+          to share information and support affordable, accessible, and 
+          powerful GIS tools in an effort to dismantle barriers and empower 
+          these communities.
+        </p>
+        <p>
+          We welcome and encourage all humans to nerd out and explore with us, 
+          and strive to ensure that all races, ethnicities, abilities, sexes, 
+          genders, sexual orientations, ages, classes, and other identities 
+          inclusive of intersectionality can belong, be heard and seen, and 
+          participate in safety.
+        </p>
+        <p>
+          PDXOSGEO seeks to improve access, transparency, and understanding 
+          around map data, technology, and storytelling for all humans in and 
+          around the greater Portland-metro region.
+        </p>
       </div>
     </div>
   </body>
