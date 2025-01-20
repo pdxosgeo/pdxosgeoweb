@@ -11,6 +11,10 @@
       rel="stylesheet"
     />
     <style>
+      :root {
+        --pdx-base-color: #53c3ba;
+      }
+
       * {
         box-sizing: border-box;
       }
@@ -200,6 +204,9 @@
         color: white;
         text-align: center;
       }
+      .about a {
+        color: var(--pdx-base-color);
+      }
       .about h2 {
         font-family: "Squada One", sans-serif;
         font-weight: 400;
@@ -210,7 +217,6 @@
         /* font-size: 1.5em; */
         margin-bottom: 10px;
       }
-
       .about div.equity h3 {
         text-align: left
       }
@@ -359,8 +365,9 @@ Tim Welch will present Turf.js, a Javascript library for spatial analysis.  He'l
       <div class="equity">
         <h3>PDXOSGEO is a Safe Space: All Are Invited</h3>
         <p>
-          At PDXOSGEO we acknowledge that we live, map, and hack on stolen 
-          land in a world where there is inequitable access to technologic 
+          At PDXOSGEO we acknowledge that we live, map, and hack on 
+          <a href="https://native-land.ca" target="_blank">stolen land</a> 
+           in a world where there is inequitable access to technologic 
           hardware and knowledge, and that negative consequences are unfairly 
           burdened on marginalized communities, particularly Indigenous, 
           Black, and other minoritized racial communities. Our group strives 
