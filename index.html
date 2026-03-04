@@ -1,8 +1,397 @@
-<html>
-<head>
-  <title>PDX Open Source GIS</title>
-</head>
-<body>
-This is the Portland Open Source GIS Group Page
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>PDXOSGeo</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/pdxosgeo.css" />
+  </head>
+  <body>
+    <div class="header">
+      <img src="./assets/img/logo.png" alt="PDXOSGEO Logo" class="logo" />
+      <h1 class="squada-one-regular">PDXOSGeo</h1>
+      <p class="subheading">Charting the course for open source</p>
+    </div>
+
+    <div class="navbar">
+      <a href="#" class="active">Home</a>
+      <a href="#past-meetings">Past Meetings</a>
+      <a href="#join">Join</a>
+      <a href="#about" class="right">About</a>
+    </div>
+
+    <div class="row">
+      <div class="side">
+        <h2>Upcoming Meetings</h2>
+        <iframe
+          src="https://calendar.google.com/calendar/embed?height=300&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showTitle=0&mode=AGENDA&showNav=0&showDate=0&showTabs=0&src=NWQ4OGI4ZWQzMzQzNjI1OGRjYjdmMmZjNDZhM2VkMjcxOTUzYzllZjRmMWMyNWFlMjI5MTlmNWRhZjQ1Njk0Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26"
+          style="border-width: 0"
+          width="100%"
+          height="250"
+          frameborder="0"
+          scrolling="no"
+        ></iframe>
+
+        <h2>Map of the Month</h2>
+        <div class="motm">
+          <!-- <img src="./assets/img/motm/earth-day.png" alt="earth day map" /> -->
+          <a href="https://what-if.xkcd.com/54/">
+            <img
+              src="./assets/img/motm/2025-10-xkcd-mars.png"
+              alt="Maybe we shouldn't have drained the oceans onto Mars."
+            />
+          </a>
+        </div>
+        <p>
+          <a href="https://what-if.xkcd.com/54/"
+            >What If: We drained the oceans onto Mars?</a
+          >
+        </p>
+        <p>©<a href="https://xkcd.com">xkcd, inc.</a></p>
+      </div>
+      <div class="main">
+        <!-- Upcoming Meeting -->
+        <hr />
+        <h2>Information Theory Part II:</h2>
+        <h2>A Terroir of Landslides!</h2>
+        <p class="byline">
+          Wednesday February 25th, 6:30–8pm | Hot Lips Pizza @ the Natural
+          Capital Center: 721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Join us once again on 4th Wednesday (February 25th), to continue the
+          conversation with David Percy, aka "Percy" for more of his research on
+          applying Reconstructability Analysis (RA) to categorical raster
+          datasets. Percy is preparing to defend his dissertation on Spatial
+          Reconstructability Analysis, and led us in in a lively discussion in
+          January. This month he will share another aspect of his work.
+        </p>
+        <p>
+          RA is a form of machine learning algorithm (MLA) that works
+          exclusively with discrete data, so categorical data such as the
+          variables in the SSURGO soils database, the geologic database
+          (DOGAMI), and land cover (NLCD) can be used as inputs in their native
+          format without conversion to dummy variables, as is typically done in
+          other MLAs.
+        </p>
+        <p>
+          For his February demo, Percy will show how these variables are used
+          along with topographic data to model landslide susceptibility in two
+          of the counties ranked highest by FEMA for most landslide hazards:
+          Lincoln and Tillamook. Percy will show that there is evidence to
+          suggest that we can map a Terroir of Landslides, using combinations of
+          soil type, geology, elevation,and terrane group, similar to the
+          combinations of environmental factors that are used to characterize
+          wines, chocolate, and coffee. Results will be presented that show how
+          these data are useful in making hazard maps.
+        </p>
+        <p>
+          All of the extraction for analysis was done in QGIS and Python using
+          open source GIS libraries
+          <a href="https://pypi.org/project/shapely/" target="_blank"
+            >Shapely</a
+          >
+          and
+          <a href="https://pypi.org/project/rasterio/" target="_blank"
+            >Rasterio</a
+          >. Code will be shared and discussed!
+        </p>
+
+        <!-- Past Meetings -->
+
+        <h2 id="past-meetings">Past Meetings</h2>
+        <hr />
+        <h2>Happy New Year</h2>
+        <h2>w/ Shapely, Rasterio and Percy!</h2>
+        <p class="byline">
+          Wednesday January 28th, 6:30–8pm | Hot Lips Pizza @ the Natural
+          Capital Center: 721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Happy New Year PDXOSGeo! Join us on fourth Wednesday to hear from
+          David Percy, aka "Percy", one of the founders of our group :) Percy
+          has been doing research on applying Reconstructability Analysis (RA)
+          to categorical raster datasets since 2012, and is preparing to defend
+          his dissertation on Spatial Reconstructability Analysis soon.
+        </p>
+        <p>
+          RA is a form of machine learning that works exclusively with discrete
+          data, so categorical data such as the
+          <a
+            href="https://www.usgs.gov/centers/eros/science/annual-national-land-cover-database"
+            target="_blank"
+            >National Land Cover Database</a
+          >
+          is a perfect source of data for it. Come hear how Percy analyzed NLCD
+          data in attempts to predict forest dynamics (clearcuts), and wildfire
+          size, specifically looking at how historical vegetation affects these
+          outcomes. Results will be presented that show how these data are
+          useful in modeling future events.
+        </p>
+        <p>
+          All of the extraction for analysis was done in Python using open
+          source GIS libraries
+          <a href="https://pypi.org/project/shapely/" target="_blank"
+            >Shapely</a
+          >
+          and
+          <a href="https://pypi.org/project/rasterio/" target="_blank"
+            >Rasterio</a
+          >. Code will be shared and discussed!
+        </p>
+        <img src="./assets/img/nlcd.jpg" alt="NLCD screenshot" width="100%" />
+        <hr />
+
+        <h2>Geo-year in Review</h2>
+        <p class="byline">
+          Wednesday Dec 10th, 6:30–8pm | Hot Lips Pizza @ the Natural Capital
+          Center: 721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Happy Holiday Season! Join us this coming Wednesday for the geo-year
+          in review! Bring us your favorite maps/data visualizations/geo-tidbits
+          from 2025! There are some interesting topics to discuss.
+        </p>
+        <p>
+          As always, there will be Pizza! There may also be cookies! Holiday
+          sweaters optional!
+        </p>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Holly-161840_1280.png"
+          width="100%"
+        />
+        <hr />
+        <br />
+        <h2>October Meeting - Luke Mitchell-Nelson!</h2>
+        <p class="byline">
+          Wednesday 10/15 6:30pm | Hot Lips Pizza @ the Natural Capital Center:
+          721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Please join us this Wednesday for a presentation by Luke
+          Mitchell-Nelson!
+        </p>
+        <p>In Luke's own words:</p>
+        <div class="well">
+          I created an interactive web tool that allows users to generate a
+          transit isochrone from any point near Trimet's service area. The web
+          tool uses a flask frontend with a leaflet map and a backend that runs
+          a headless QGIS install and some scripts to do the geoprocessing. It's
+          my first attempt at a web project!
+        </div>
+        <p>Bring thoughts, ideas, support, and questions!</p>
+        <p>There will also be time to discuss the survey results below:</p>
+        <div class="well">
+          <img
+            src="./assets/img/posts/2025-10/survey_when.png"
+            alt="Which Wednesday to meet"
+            width="100%"
+          />
+          <img
+            src="./assets/img/posts/2025-10/survey_where.png"
+            alt="Potential for hybrid attendence"
+            width="100%"
+          />
+          <img
+            src="./assets/img/posts/2025-10/survey_what.png"
+            alt="What topics are of interest"
+            width="100%"
+          />
+        </div>
+
+        <p>
+          As always, there will be Pizza to share, and libations available for
+          purchase from our wonderful hosts, HOTLIPS!
+        </p>
+
+        <p>
+          Zoom link for remote participants:
+          <a
+            href="https://us02web.zoom.us/j/84354140386?pwd=g3gZCAjEZfWxWXFevoizOovOgDizuJ.1"
+            target="_blank"
+            >https://us02web.zoom.us/j/84354140386?pwd=g3gZCAjEZfWxWXFevoizOovOgDizuJ.1</a
+          >
+        </p>
+        <p>Meeting ID: 843 5414 0386 <br />Passcode: 166107</p>
+        <h2>September Meeting - Show & Tell!</h2>
+        <p class="byline">
+          Wednesday 9/17 6:30pm | Hot Lips Pizza @ the Natural Capital Center:
+          721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Please join us this Wednesday as we ease back into our regular meeting
+          cycle with some loose scheduling and some show and tell! We'll have
+          the big screen up and ready to showcase what you've been working on
+          this summer. Ease the end-of-summer pain of these darker
+          mornings/evenings with some 'topographical' therapy, or just buy a
+          pint next door!
+          <br />
+          <b>
+            Wednesday 9/17 6:30pm | Across the hall from Hot Lips Pizza @ the
+            Natural Capital Center 721 NW 9th Ave, Portland OR </b
+          ><br />
+          As always, there will be pizza!
+        </p>
+        <img
+          src="https://static.wixstatic.com/media/04919f_2911617fa17c4ab79ebf1b81c4e17d15~mv2.jpg/v1/fill/w_454,h_366,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/04919f_2911617fa17c4ab79ebf1b81c4e17d15~mv2.jpg"
+          alt="Natural Capital Center"
+          width="100%"
+        />
+        <h2>June Meeting - Ryan Burley</h2>
+        <p class="byline">
+          Wednesday 6/18 6:30pm | Hot Lips Pizza + ZOOM call @ the Natural
+          Capital Center 721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Please join us this Wednesday to hear from Ryan Burley of GeoSolutions
+          who will share an overview of "GeoSolutions in Action" and showcase
+          some real world applications leveraging the Open Source for Geo
+          ecosystem. GeoSolutions is composed of international professionals
+          with leading roles in some of the main Open Source products for the
+          geospatial field such as GeoServer, GeoNetwork, MapStore and GeoNode
+          for which they provide Enterprise Support Services, Subscription
+          Services and Professional Training Services. GeoSolutions counts among
+          its customers more than 300 major national and international
+          government agencies as well as private companies worldwide. We'll have
+          time for a little show and tell right after so bring your apps or
+          works-in-progress and share with other geo-folk :) Wednesday 6/18
+          6:30pm | Across the hall from Hot Lips Pizza @ the Natural Capital
+          Center 721 NW 9th Ave, Portland OR As always, there will be pizza!
+        </p>
+        <img
+          src="https://geonode.org/static/img/hero_img.png"
+          alt="GeoNode"
+          width="100%"
+        />
+        <h2>May Meeting - Brendan Farrell</h2>
+        <p class="byline">
+          Wednesday 5/21 6:30pm | Hot Lips Pizza + ZOOM call @ the Natural
+          Capital Center 721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Brendan Farrell will share observations from his year working in GIS
+          in Paris. He'll discuss open data, the IGN (French equivalent of the
+          USGS) and one of his favorites: Le Salon International de
+          l'Agriculture. There will also be time to discuss geospatial projects
+          you're working on or find interesting.
+        </p>
+        <img
+          src="./assets/img/motm/2025-05-l-salon.jpg"
+          alt="Le Salon
+        International de l’Agriculture."
+          width="100%"
+        />
+        <h2>March Meeting - Show & Tell</h2>
+        <p class="byline">
+          Wednesday 3/19 6:30pm | Hot Lips Pizza + ZOOM call @ the Natural
+          Capital Center 721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          Curious about what your fellow OSGeo members are working on? Bring a
+          demo or just learn about what others are doing. We'll have the big
+          screen up and ready.
+        </p>
+        <img
+          src="./assets/img/motm/2025-03-showtell.jpg"
+          alt="Show and tell maps"
+          width="100%"
+        />
+        <hr />
+        <h2>February Meeting 2/19</h2>
+        <p class="byline">
+          Wednesday 2/19 6:30pm | Hot Lips Pizza + ZOOM call @ the Natural
+          Capital Center 721 NW 9th Ave, Portland OR
+        </p>
+        <img
+          src="https://gwmap.s3.amazonaws.com/www/images/Header.jpg"
+          alt="Greenwood Mapping"
+          width="100%"
+        />
+        <p>
+          Richard Greenwood of
+          <a href="https://www.greenwoodmap.com/">Greenwood Mapping</a> will
+          share insights from his 30-year career, starting as a land surveyor
+          and evolving into a GIS professional specializing in open-source
+          solutions. He has developed and supported more than a dozen
+          County-focused MapServers in Idaho and Wyoming. These online maps are
+          powered by his custom web mapping platform, built on MapServer,
+          OpenLayers, and PostGIS. The maps provide public access to geographic
+          data and legal documents, and are essential tools supporting county
+          tax assessors, treasurers, and clerks in their daily work.
+        </p>
+
+        <!-- Turf.js
+Tim Welch will present Turf.js, a Javascript library for spatial analysis.  He'll cover the basics of what Turf is, where it fits in the toolbox, and how you can piece together its many modules to do useful things using the common language of GeoJSON. https://turfjs.org -->
+        <h2>January Meeting 1/15</h2>
+        <p class="byline">
+          Wednesday 1/15 6:30pm | Hot Lips Pizza + ZOOM call @ the Natural
+          Capital Center 721 NW 9th Ave, Portland OR
+        </p>
+        <img
+          src="./assets/img/motm/2025-01-turf.jpg"
+          alt="Turf.js"
+          width="100%"
+        />
+        <p>
+          Tim Welch will present Turf.js, a Javascript library for spatial
+          analysis. He'll cover the basics of what Turf is, where it fits in the
+          toolbox, and how you can piece together its many modules to do useful
+          things using the common language of GeoJSON.
+          <a href="https://turfjs.org">https://turfjs.org</a>
+        </p>
+
+        <h2>December Meeting 12/11</h2>
+        <p class="byline">
+          Wednesday 12/11 6:30pm | Hot Lips Pizza + ZOOM call @ the Natural
+          Capital Center 721 NW 9th Ave, Portland OR
+        </p>
+        <p>
+          It's our last meeting for 2024. We'll be at Hot Lips Pizza again and
+          on Zoom for those traveling. A little bit of planning and a little bit
+          of scheduling. See you there!
+        </p>
+        <img
+          src="./assets/img/motm/2024-11-GIS-day.jpg"
+          alt="GIS Day"
+          width="100%"
+        />
+        <!-- <p>
+          <a
+            href="https://github.com/pdxosgeo/pdxosgeoweb/wiki/Meeting-Notes-Oct-23,-2024"
+            >Meeting Notes</a
+          >
+        </p> -->
+      </div>
+    </div>
+    <div class="join" id="join">
+      <h2>Join Us!</h2>
+      <!-- show a list of 3 logos that are centered and inline -->
+      <div class="logos">
+        <a href="https://thespatialcommunity.slack.com/"
+          ><img src="./assets/img/logos/slack.png" alt="Slack Logo"
+        /></a>
+        <a href="https://groups.google.com/g/pdx-osgeo"
+          ><img src="./assets/img/logos/google.png" alt="Google Logo"
+        /></a>
+        <a href="https://github.com/pdxosgeo/pdxosgeoweb"
+          ><img src="./assets/img/logos/github.png" alt="Github Logo"
+        /></a>
+      </div>
+    </div>
+    <div id="about" class="about">
+      <h2>About PDXOSGEO</h2>
+      <!-- show a list of 3 logos that are centered and inline -->
+      <div>
+        The Portland chapter of OSGeo is focused on learning and teaching about
+        open data,maps, and spatial applications. We like code and good
+        conversation.
+      </div>
+    </div>
+  </body>
 </html>
