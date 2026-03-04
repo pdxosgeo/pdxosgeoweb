@@ -10,227 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Squada+One&display=swap"
       rel="stylesheet"
     />
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-
-      /* Style the body */
-      body {
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0;
-      }
-
-      /* Header/logo Title */
-      .header {
-        padding: 60px;
-        text-align: center;
-        color: #333;
-        background: linear-gradient(
-            to right,
-            rgba(255, 255, 255, 1),
-            rgba(255, 255, 255, 0)
-          ),
-          url("./assets/img/backgd-map.png");
-        background-size: cover;
-        /* align the content vertically */
-        display: flex;
-        flex-direction: column;
-        justify-content: left;
-        align-items: center;
-      }
-      .header h1 {
-        font-family: "Squada One", sans-serif;
-        font-weight: 400;
-        font-style: normal;
-        font-size: 5em;
-        text-align: left;
-        margin: 0;
-      }
-      .header .subheading {
-        margin-top: 0;
-        font-style: italic;
-      }
-
-      /* Sticky navbar - toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it "sticks" in place (like position:fixed). The sticky value is not supported in IE or Edge 15 and earlier versions. However, for these versions the navbar will inherit default position */
-      .navbar {
-        overflow: hidden;
-        background-color: #666;
-        position: sticky;
-        /* position: -webkit-sticky; */
-        top: 0;
-      }
-
-      /* Style the navigation bar links */
-      .navbar a {
-        font-family: "squada one", sans-serif;
-        font-size: 1.5em;
-        font-weight: 200;
-        float: left;
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 20px;
-        text-decoration: none;
-      }
-
-      /* Right-aligned link */
-      .navbar a.right {
-        float: right;
-      }
-
-      /* Change color on hover */
-      .navbar a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-
-      /* Active/current link */
-      /* .navbar a.active {
-        background-color: #666;
-        color: white;
-      } */
-
-      /* Column container */
-      .row {
-        display: -ms-flexbox; /* IE10 */
-        display: flex;
-        -ms-flex-wrap: wrap; /* IE10 */
-        flex-wrap: wrap;
-      }
-
-      /* Create two unequal columns that sits next to each other */
-      /* Sidebar/left column */
-      .side {
-        -ms-flex: 30%; /* IE10 */
-        flex: 30%;
-        background-color: #f1f1f1;
-        padding: 20px;
-      }
-      .side h2 {
-        font-family: "Squada One", sans-serif;
-        font-weight: 600;
-        font-style: normal;
-        font-size: 2em;
-        margin-top: 0;
-        font-weight: 200;
-        margin-bottom: 10px;
-      }
-
-      .side h3 {
-        margin-top: 0;
-        font-weight: 200;
-        font-size: 1em;
-        margin-bottom: 10px;
-      }
-
-      .side p {
-        font-style: italic;
-        font-size: 0.75em;
-      }
-      .side .motm {
-        width: 100%;
-        border-radius: 5px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-      }
-
-      .side .motm img {
-        width: 100%;
-        border-radius: 5px;
-      }
-
-      /* Main column */
-      .main {
-        -ms-flex: 70%; /* IE10 */
-        flex: 70%;
-        background-color: white;
-        padding: 20px;
-        line-height: 1.5em;
-      }
-      .main h2 {
-        font-family: "Squada One", sans-serif;
-        font-weight: 200;
-        font-style: normal;
-        font-size: 3em;
-        margin-top: 20px;
-        font-weight: 200;
-        /* font-size: 1.5em; */
-        margin-bottom: 10px;
-      }
-      .main .topic {
-        font-weight: 600;
-      }
-      .main .byline {
-        font-style: italic;
-        font-size: 0.75em;
-      }
-      /* join */
-      .join {
-        padding: 20px;
-        text-align: center;
-        background: #ddd;
-      }
-      .join h2 {
-        font-family: "Squada One", sans-serif;
-        font-weight: 400;
-        font-size: 3em;
-        font-style: normal;
-        margin-top: 0;
-        font-weight: 200;
-        /* font-size: 1.5em; */
-        margin-bottom: 10px;
-      }
-      .join .logos {
-        display: flex;
-        /* column */
-        flex-direction: row;
-        justify-content: space-evenly;
-        align-items: center;
-      }
-      .join img {
-        /* padding: 20px; */
-        max-width: 150px;
-      }
-      .about {
-        overflow: hidden;
-        background-color: #333;
-        padding: 60px;
-        margin: 0;
-        top: 0;
-        color: white;
-        text-align: center;
-      }
-      .about h2 {
-        font-family: "Squada One", sans-serif;
-        font-weight: 400;
-        font-size: 3em;
-        font-style: normal;
-        margin-top: 0;
-        font-weight: 200;
-        /* font-size: 1.5em; */
-        margin-bottom: 10px;
-      }
-
-      /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
-      @media screen and (max-width: 700px) {
-        .row {
-          flex-direction: column;
-        }
-        .join .logos {
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-        }
-      }
-
-      /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-      @media screen and (max-width: 400px) {
-        .navbar a {
-          float: none;
-          width: 100%;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="./assets/css/pdxosgeo.css" />
   </head>
   <body>
     <div class="header">
@@ -262,54 +42,56 @@
         <div class="motm">
           <!-- <img src="./assets/img/motm/earth-day.png" alt="earth day map" /> -->
           <a
-            href="https://native-land.ca/maps/constellation"
+          href="https://what-if.xkcd.com/54/"
           >
             <img
-              src="./assets/img/motm/2026-01-nativelands_constellation.jpg"
-              alt="Maybe we shouldn't have drained the oceans."
-          /></a>
+                src="./assets/img/motm/2025-10-xkcd-mars.png"
+                alt="Maybe we shouldn't have drained the oceans onto Mars."
+            />
+          </a>
         </div>
         <p>
-          <a href="https://native-land.ca/maps/constellation">The native-land.ca Constellation Map</a> reimagines how Indigenous nations can be shown by highlighting relationships, connections, and presence rather than strict borders.</p>
-        <p>This map displays nations as glowing points linked together in a constellation-like network, with only faint hints of territorial shapes in the background. It’s a way of inviting users to explore Indigenous land, waters, and people through a more interconnected lens. </p>
-        
+          <a
+            href="https://what-if.xkcd.com/54/"
+            >What If: We drained the oceans onto Mars?</a
+          >
+        </p>
+        <p>©<a href="https://xkcd.com">xkcd, inc.</a></p>
       </div>
       <div class="main">
-        <!-- Community Survey 
-        <h2>PDX OSGEO Community Survey</h2>
-        <p>
-          We want to hear from you! Please take a moment to fill out our community survey and help us improve our meetings and events.
-        </p>
-        <p>
-          <a href="https://forms.gle/rdpFdybZMSBjcPgb6" class="button">Take the Survey</a>
-        </p>
-        <p>The survey is live through October 5th, 2025. More details can be found on <a href="https://groups.google.com/g/pdx-osgeo"
-          >the mailing list</a>.</p> -->
-
         <!-- Upcoming Meeting -->
-        <hr/>
-                <h2>Information Theory Part II:</h2><h2>A Terroir of Landslides!</h2>
+         <h2>October Meeting - Luke Mitchell-Nelson!</h2>
         <p class="byline">
-          Wednesday February 25th, 6:30–8pm | Hot Lips Pizza @ the Natural
+          Wednesday 10/15 6:30pm | Hot Lips Pizza @ the Natural
           Capital Center: 721 NW 9th Ave, Portland OR
         </p>
-        <p>Join us once again on 4th Wednesday (February 25th), to continue the conversation with David Percy, aka "Percy" for more of his research on applying Reconstructability Analysis (RA) to categorical raster datasets.  Percy is preparing to defend his dissertation on Spatial Reconstructability Analysis, and led us in in a lively discussion in January. This month he will share another aspect of his work. </p>
-        <p>RA is a form of machine learning algorithm (MLA) that works exclusively with discrete data, so categorical data such as the variables in the SSURGO soils database, the geologic database (DOGAMI), and land cover (NLCD) can be used as inputs in their native format without conversion to dummy variables, as is typically done in other MLAs.</p>
-        <p>For his February demo, Percy will show how these variables are used along with topographic data to model landslide susceptibility in two of the counties ranked highest by FEMA for most landslide hazards: Lincoln and Tillamook. Percy will show that there is evidence to suggest that we can map a Terroir of Landslides, using combinations of soil type, geology, elevation,and terrane group, similar to the combinations of environmental factors that are used to characterize wines, chocolate, and coffee. Results will be presented that show how these data are useful in making hazard maps. </p>
-        <p>All of the extraction for analysis was done in QGIS and Python using open source GIS libraries <a href="https://pypi.org/project/shapely/" target="_blank">Shapely</a> and <a href="https://pypi.org/project/rasterio/" target="_blank">Rasterio</a>. Code will be shared and discussed!</p>
+        <p>
+          Please join us this Wednesday for a presentation by Luke Mitchell-Nelson!
+        </p>
+        <p>
+          In Luke's own words:
+        </p>
+        <div class="well">
+          I created an interactive web tool that allows users to generate a transit isochrone from any point near Trimet's service area. The web tool uses a flask frontend with a leaflet map and a backend that runs a headless QGIS install and some scripts to do the geoprocessing. It's my first attempt at a web project!
+        </div>
+        <p>Bring thoughts, ideas, support, and questions!</p>
+        <p>There will also be time to discuss the survey results below:</p>
+        <div class="well">
+          <img src="./assets/img/posts/2025-10/survey_when.png" alt="Which Wednesday to meet" width="100%" />
+          <img src="./assets/img/posts/2025-10/survey_where.png" alt="Potential for hybrid attendence" width="100%" />
+          <img src="./assets/img/posts/2025-10/survey_what.png" alt="What topics are of interest" width="100%" />
+        </div>
+
+        <p>
+          As always, there will be Pizza to share, and libations available for purchase from our wonderful hosts, HOTLIPS!
+        </p>          
+
         
         <p>Zoom link for remote participants: <a href="https://us02web.zoom.us/j/84354140386?pwd=g3gZCAjEZfWxWXFevoizOovOgDizuJ.1" target="_blank">https://us02web.zoom.us/j/84354140386?pwd=g3gZCAjEZfWxWXFevoizOovOgDizuJ.1</a> </p>
         <p>Meeting ID: 843 5414 0386 <br/>Passcode: 166107</p>
       <!-- Past Meetings -->
          
-        <h2
-          id="past-meetings"
-          style="
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-          "
-        >
+        <h2 id="past-meetings">
           Past Meetings
         </h2>
         <hr />
@@ -333,7 +115,7 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e8/Holly-161840_1280.png" width="100%"/>
           <hr />
         <br />
-        <h2>Sept. Meeting - Show & Tell!</h2>
+        <h2>September Meeting - Show & Tell!</h2>
         <p class="byline">
           Wednesday 9/17 6:30pm | Hot Lips Pizza @ the Natural
           Capital Center: 721 NW 9th Ave, Portland OR
