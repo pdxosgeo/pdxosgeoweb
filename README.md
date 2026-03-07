@@ -1,4 +1,4 @@
-# PDX OSGeo Website (GitHub Pages)
+# PDXOSGeo Website (GitHub Pages)
 
 This repository hosts the **PDX OSGeo website hosted on GitHub Pages**.
 
