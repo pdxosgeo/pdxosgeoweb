@@ -1,0 +1,12 @@
+---
+import site from '../data/site.json';
+---
+
+<section class="panel">
+  <h2 class="panel__title">Upcoming Meetings</h2>
+  <iframe
+    class="calendar"
+    src={site.calendarEmbedUrl}
+    title="PDXOSGeo meeting calendar"
+    loading="lazy"></iframe>
+</section>

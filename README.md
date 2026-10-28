@@ -2,6 +2,8 @@
 
 This repository hosts the **PDX OSGeo website hosted on GitHub Pages**.
 
+> A new Astro version of the site, with Markdown posts and a browser-based editor, lives in [`astro-site/`](astro-site/README.md). Until it goes live, `index.html` below is still the published site.
+
 ## Where the site lives / entrypoint
 
 - **Branch:** `gh-pages`

@@ -1,0 +1,20 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MapFigure from '../components/MapFigure.astro';
+import { getMaps } from '../lib/content';
+
+const maps = await getMaps();
+---
+
+<BaseLayout
+  title="Map of the Month"
+  description="Maps that caught the PDXOSGeo community's eye, one month at a time."
+  showSidebar={false}
+>
+  <p class="eyebrow">Archive</p>
+  <h1 class="page-title">Map of the Month</h1>
+  <p class="lede">Maps that caught our eye, one month at a time.</p>
+  <div class="map-grid">
+    {maps.map((map) => <MapFigure map={map} headingLevel="h2" />)}
+  </div>
+</BaseLayout>

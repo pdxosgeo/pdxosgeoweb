@@ -1,0 +1,45 @@
+---
+import { render } from 'astro:content';
+import { formatMonth, type MapOfTheMonth } from '../lib/content';
+
+interface Props {
+  map: MapOfTheMonth;
+  headingLevel?: 'h2' | 'h3';
+}
+
+const { map, headingLevel: Heading = 'h3' } = Astro.props;
+const { title, month, image, imageAlt, link, credit, creditUrl } = map.data;
+const { Content } = await render(map);
+---
+
+<figure class="map-figure">
+  {
+    image ? (
+      <a class="map-figure__image" href={link ?? image}>
+        <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
+      </a>
+    ) : (
+      link && (
+        <a class="map-figure__image map-figure__image--placeholder" href={link} aria-hidden="true" tabindex="-1">
+          <span class="card__placeholder" />
+        </a>
+      )
+    )
+  }
+  <figcaption>
+    <p class="map-figure__month">{formatMonth(month)}</p>
+    <Heading class="map-figure__title">
+      {link ? <a href={link}>{title}</a> : title}
+    </Heading>
+    <div class="map-figure__body prose">
+      <Content />
+    </div>
+    {
+      credit && (
+        <p class="map-figure__credit">
+          © {creditUrl ? <a href={creditUrl}>{credit}</a> : credit}
+        </p>
+      )
+    }
+  </figcaption>
+</figure>

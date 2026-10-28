@@ -1,0 +1,121 @@
+# Pages CMS (https://pagescms.org) configuration for the Astro site in astro-site/.
+# Sign in at https://app.pagescms.org with GitHub and open this repository to edit
+# meetings, Maps of the Month, and site settings through a form-based editor.
+
+media:
+  input: astro-site/public/images
+  output: /images
+
+content:
+  - name: meetings
+    label: Meetings
+    type: collection
+    path: astro-site/src/content/meetings
+    filename: "{year}-{month}-{day}-{primary}.md"
+    view:
+      fields: [title, date]
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: date
+        label: Meeting date
+        type: date
+        required: true
+      - name: time
+        label: Time
+        type: string
+        description: Leave empty for the default (6:30pm).
+      - name: location
+        label: Location
+        type: string
+        description: Leave empty for the default (Hot Lips Pizza @ the Natural Capital Center).
+      - name: summary
+        label: Card summary
+        type: text
+        description: Optional. Short blurb for meeting cards. Defaults to the start of the post.
+      - name: image
+        label: Image
+        type: image
+      - name: imageAlt
+        label: Image description (alt text)
+        type: string
+      - name: youtube
+        label: YouTube video ID
+        type: string
+        description: The part after "v=" in a YouTube URL, e.g. X-fewMkogAc
+      - name: draft
+        label: Draft (hidden from the live site)
+        type: boolean
+        default: false
+      - name: body
+        label: Post
+        type: rich-text
+
+  - name: maps
+    label: Map of the Month
+    type: collection
+    path: astro-site/src/content/maps
+    filename: "{year}-{month}-{primary}.md"
+    view:
+      fields: [title, month]
+      default:
+        sort: month
+        order: desc
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: month
+        label: Month
+        type: date
+        required: true
+        description: Any day in the featured month. The newest month shows on the homepage.
+      - name: image
+        label: Image
+        type: image
+      - name: imageAlt
+        label: Image description (alt text)
+        type: string
+      - name: link
+        label: Link to the map
+        type: string
+      - name: credit
+        label: Credit
+        type: string
+      - name: creditUrl
+        label: Credit link
+        type: string
+      - name: draft
+        label: Draft (hidden from the live site)
+        type: boolean
+        default: false
+      - name: body
+        label: Description
+        type: rich-text
+
+  - name: site
+    label: Site settings
+    type: file
+    path: astro-site/src/data/site.json
+    fields:
+      - { name: title, label: Site title, type: string }
+      - { name: tagline, label: Tagline, type: string }
+      - { name: description, label: Search engine description, type: text }
+      - { name: calendarEmbedUrl, label: Google Calendar embed URL, type: string }
+      - { name: defaultTime, label: Default meeting time, type: string }
+      - { name: defaultLocation, label: Default meeting location, type: string }
+      - { name: about, label: About text, type: text }
+      - name: joinLinks
+        label: Join links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: url, label: URL, type: string }
+          - { name: logo, label: Logo, type: image }

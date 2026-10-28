@@ -1,0 +1,22 @@
+---
+import CalendarEmbed from './CalendarEmbed.astro';
+import MapFigure from './MapFigure.astro';
+import { getMaps } from '../lib/content';
+
+const [currentMap] = await getMaps();
+---
+
+<aside class="sidebar">
+  <CalendarEmbed />
+  {
+    currentMap && (
+      <section class="panel">
+        <h2 class="panel__title">Map of the Month</h2>
+        <MapFigure map={currentMap} />
+        <a class="more-link" href="/map-of-the-month/">
+          Past maps →
+        </a>
+      </section>
+    )
+  }
+</aside>
