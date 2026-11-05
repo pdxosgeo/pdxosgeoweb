@@ -1,13 +1,12 @@
 name: Deploy Astro site
 
-# Manual only for now: the live site is still served from index.html on gh-pages.
-# To switch over, set Settings → Pages → Source to "GitHub Actions", then uncomment
-# the push trigger (and the schedule, so "Next meeting" rolls over after each meetup).
+# Manual only for now: switch Settings → Pages → Source to "GitHub Actions", then
+# uncomment the push trigger (and the schedule, so "Next meeting" rolls over after
+# each meetup) when ready to make this the live site.
 on:
   workflow_dispatch:
   # push:
   #   branches: [gh-pages]
-  #   paths: ['astro-site/**']
   # schedule:
   #   - cron: '0 13 * * *'
 
@@ -23,21 +22,18 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: astro-site
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version-file: astro-site/.nvmrc
+          node-version-file: .nvmrc
           cache: npm
-          cache-dependency-path: astro-site/package-lock.json
+          cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: astro-site/dist
+          path: dist
 
   deploy:
     needs: build

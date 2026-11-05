@@ -1,44 +1,90 @@
-# PDXOSGeo Website (GitHub Pages)
+# PDXOSGeo website (Astro)
 
-This repository hosts the **PDX OSGeo website hosted on GitHub Pages**.
+The pdxosgeo.org site, built with [Astro](https://astro.build/) and React. Meetings and Maps of the Month are plain Markdown files, so most updates never touch code.
 
-> A new Astro version of the site, with Markdown posts and a browser-based editor, lives in [`astro-site/`](astro-site/README.md). Until it goes live, `index.html` below is still the published site.
+## Editing content
 
-## Where the site lives / entrypoint
+You have two options:
 
-- **Branch:** `gh-pages`
-- **Entrypoint:** `index.html` at the repository root
-- **Custom domain:** `pdxosgeo.org` (configured via `CNAME`)
+- **In the browser (no setup):** sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open `pdxosgeo/pdxosgeoweb`. You get forms for meetings, Maps of the Month, and site settings, with image uploads. The editor is configured in [`.pages.yml`](.pages.yml).
+- **In a text editor:** edit the files described below and open a pull request, same as before.
 
-Browse the published branch contents here:
-- https://github.com/pdxosgeo/pdxosgeoweb/tree/gh-pages
+### Add a meeting
 
-## Editing workflow (how to publish changes)
+Create a file in `src/content/meetings/` named `YYYY-MM-DD-short-title.md`:
 
-This is a static site (HTML/CSS/assets). To publish updates:
+```markdown
+---
+title: MapLibre + Maputnik
+date: 2026-04-22
+image: /images/posts/2026/2026-april-maputnik.png
+imageAlt: Screenshot of the Maputnik style editor
+---
 
-1. **Edit the site files**
-   - Update `index.html` for page content/layout.
-   - Update CSS and other static assets (images, etc.) as needed (see `assets/`).
-2. **Create a new branch from `gh-pages` branch**
-   - use the convention `username/feature-name`.
-   - Example: `geografa/october-2025-post`
-3. **Create a Pull Request (PR)**
-   - create a PR against `gh-pages` branch and someone will follow up to review.
-   - Once changes are committed/merged to `gh-pages`, GitHub Pages will pick them up.
-4. **Changes go live automatically**
-   - GitHub Pages serves the latest committed content from `gh-pages` (may take a short time to refresh).
+Write the post here. **Bold**, [links](https://maplibre.org), lists, and
+![inline images](/images/posts/2026/another-image.png) all work.
+```
 
-## Conventions / structure
+| Field | Required | Notes |
+| --- | --- | --- |
+| `title` | yes | |
+| `date` | yes | `YYYY-MM-DD` |
+| `time` | no | Defaults to `6:30pm` |
+| `location` | no | Defaults to Hot Lips Pizza @ the Natural Capital Center |
+| `image`, `imageAlt` | no | `/images/...` path or a full URL |
+| `summary` | no | Card blurb; defaults to the start of the post |
+| `youtube` | no | Video ID, e.g. `X-fewMkogAc` |
+| `draft` | no | `true` hides the post from the live site |
 
-- `index.html` — main homepage HTML. Add posts and Map of the Month (MoTM) here.
-- `assets/` — static site assets (CSS, images, etc.).
-  - CSS is referenced from: `./assets/css/pdxosgeo.css`
-  - Images are referenced from: `./assets/img/...`
+The homepage features the next upcoming meeting, or the most recent one if nothing is scheduled. Every meeting gets its own page and shows up in the searchable archive at `/meetings/`.
 
-## Useful links (optional)
+### Update the Map of the Month
 
-- GitHub Pages settings for this repo (UI):  
-  Repository → **Settings** → **Pages**
-- Public site URL:
-  - https://pdxosgeo.org (if DNS / Pages settings are configured for it)
+Add a file to `src/content/maps/` named `YYYY-MM-short-title.md`. The newest `month` appears in the sidebar; older ones move to `/map-of-the-month/`.
+
+```markdown
+---
+title: Shakespeare’s World
+month: 2026-05-01
+image: /images/motm/2026-05-shakesperes-world.png
+imageAlt: Shakespeare’s World map
+link: https://knowwhereconsulting.co.uk/blog/shakespeares-world/
+credit: Stephen Feldman
+creditUrl: https://knowwhereconsulting.co.uk/
+---
+
+Optional description.
+```
+
+### Images
+
+Put images in `public/images/` (meeting images in `public/images/posts/<year>/`, maps in `public/images/motm/`) and reference them starting with `/images/`.
+
+### Site settings
+
+The title, tagline, Google Calendar embed, default time and location, Join links, and About text live in `src/data/site.json`.
+
+## Running locally
+
+Requires Node 22.12 or newer (`nvm use` picks it up from `.nvmrc`).
+
+```sh
+npm install
+npm run dev      # http://localhost:4321
+npm run build    # type-checks content, then builds to dist/
+```
+
+The build fails with a clear message if a post is missing a required field or has a malformed date.
+
+## Deploying
+
+`.github/workflows/deploy-astro-site.yml` builds the repo root and publishes it to GitHub Pages. It runs manually for now; see the comments in that file for switching the live site over.
+
+The previous static HTML site README is preserved at [`docs/README-legacy-html.md`](docs/README-legacy-html.md).
+
+## Code layout
+
+- `src/content.config.ts`: content schemas (the fields above)
+- `src/pages/`: routes (`/`, `/meetings/`, `/meetings/<slug>/`, `/map-of-the-month/`)
+- `src/components/`: Astro components plus the React `MeetingArchive` search and filter
+- `src/styles/global.css`: all styles

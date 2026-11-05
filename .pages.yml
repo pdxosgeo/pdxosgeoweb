@@ -1,16 +1,16 @@
-# Pages CMS (https://pagescms.org) configuration for the Astro site in astro-site/.
+# Pages CMS (https://pagescms.org) configuration for the Astro site at the repo root.
 # Sign in at https://app.pagescms.org with GitHub and open this repository to edit
 # meetings, Maps of the Month, and site settings through a form-based editor.
 
 media:
-  input: astro-site/public/images
+  input: public/images
   output: /images
 
 content:
   - name: meetings
     label: Meetings
     type: collection
-    path: astro-site/src/content/meetings
+    path: src/content/meetings
     filename: "{year}-{month}-{day}-{primary}.md"
     view:
       fields: [title, date]
@@ -59,7 +59,7 @@ content:
   - name: maps
     label: Map of the Month
     type: collection
-    path: astro-site/src/content/maps
+    path: src/content/maps
     filename: "{year}-{month}-{primary}.md"
     view:
       fields: [title, month]
@@ -102,7 +102,7 @@ content:
   - name: site
     label: Site settings
     type: file
-    path: astro-site/src/data/site.json
+    path: src/data/site.json
     fields:
       - { name: title, label: Site title, type: string }
       - { name: tagline, label: Tagline, type: string }

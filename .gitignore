@@ -1,5 +1,11 @@
+# Legacy / local
 archive
 .DS_Store
 tmp
 /assets/video/archive
 
+# Astro / Node
+node_modules/
+dist/
+.astro/
+.env
