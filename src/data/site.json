@@ -1,0 +1,26 @@
+{
+  "title": "PDXOSGeo",
+  "tagline": "Charting the course for open source",
+  "description": "The Portland chapter of OSGeo: monthly meetups about open data, maps, and spatial applications.",
+  "calendarEmbedUrl": "https://calendar.google.com/calendar/embed?height=300&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showTitle=0&mode=AGENDA&showNav=0&showDate=0&showTabs=0&src=NWQ4OGI4ZWQzMzQzNjI1OGRjYjdmMmZjNDZhM2VkMjcxOTUzYzllZjRmMWMyNWFlMjI5MTlmNWRhZjQ1Njk0Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26",
+  "defaultTime": "6:30pm",
+  "defaultLocation": "Hot Lips Pizza @ the Natural Capital Center: 721 NW 9th Ave, Portland OR",
+  "about": "The Portland chapter of OSGeo is focused on learning and teaching about open data, maps, and spatial applications. We like code and good conversation.",
+  "joinLinks": [
+    {
+      "label": "Slack",
+      "url": "https://thespatialcommunity.slack.com/",
+      "logo": "/images/logos/slack.png"
+    },
+    {
+      "label": "Google Group",
+      "url": "https://groups.google.com/g/pdx-osgeo",
+      "logo": "/images/logos/google.png"
+    },
+    {
+      "label": "GitHub",
+      "url": "https://github.com/pdxosgeo/pdxosgeoweb",
+      "logo": "/images/logos/github.png"
+    }
+  ]
+}

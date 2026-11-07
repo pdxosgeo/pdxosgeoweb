@@ -1,0 +1,54 @@
+---
+import { render } from 'astro:content';
+import { formatDate, meetingHref, type Meeting } from '../lib/content';
+
+interface Props {
+  meeting: Meeting;
+  eyebrow?: string;
+  linkTitle?: boolean;
+}
+
+const { meeting, eyebrow, linkTitle = false } = Astro.props;
+const { title, date, time, location, image, imageAlt, youtube } = meeting.data;
+const { Content } = await render(meeting);
+---
+
+<article class="meeting">
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <h1 class="meeting__title">
+    {linkTitle ? <a href={meetingHref(meeting)}>{title}</a> : title}
+  </h1>
+  <dl class="meeting__details">
+    <div>
+      <dt>When</dt>
+      <dd>
+        <time datetime={date.toISOString().slice(0, 10)}>{formatDate(date)}</time>, {time}
+      </dd>
+    </div>
+    <div>
+      <dt>Where</dt>
+      <dd>{location}</dd>
+    </div>
+  </dl>
+
+  {image && <img class="meeting__image" src={image} alt={imageAlt} decoding="async" />}
+
+  <div class="prose">
+    <Content />
+  </div>
+
+  {
+    youtube && (
+      <div class="video">
+        <iframe
+          src={`https://www.youtube.com/embed/${youtube}`}
+          title={`Video: ${title}`}
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        />
+      </div>
+    )
+  }
+</article>

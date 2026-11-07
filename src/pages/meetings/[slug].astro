@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MeetingArticle from '../../components/MeetingArticle.astro';
+import { excerpt, getMeetings, isUpcoming, meetingHref, type Meeting } from '../../lib/content';
+
+export const getStaticPaths = (async () => {
+  const meetings = await getMeetings();
+  return meetings.map((meeting, index) => ({
+    params: { slug: meeting.id },
+    props: { meeting, newer: meetings[index - 1], older: meetings[index + 1] },
+  }));
+}) satisfies GetStaticPaths;
+
+interface Props {
+  meeting: Meeting;
+  newer?: Meeting;
+  older?: Meeting;
+}
+
+const { meeting, newer, older } = Astro.props;
+---
+
+<BaseLayout
+  title={meeting.data.title}
+  description={meeting.data.summary || excerpt(meeting.body, 155)}
+>
+  <a class="back-link" href="/meetings/">← All meetings</a>
+  <MeetingArticle meeting={meeting} eyebrow={isUpcoming(meeting) ? 'Upcoming meeting' : 'Past meeting'} />
+
+  <nav class="pager" aria-label="More meetings">
+    {
+      older ? (
+        <a class="pager__link" href={meetingHref(older)} rel="prev">
+          <span>← Previous</span>
+          {older.data.title}
+        </a>
+      ) : (
+        <span />
+      )
+    }
+    {
+      newer && (
+        <a class="pager__link pager__link--next" href={meetingHref(newer)} rel="next">
+          <span>Next →</span>
+          {newer.data.title}
+        </a>
+      )
+    }
+  </nav>
+</BaseLayout>

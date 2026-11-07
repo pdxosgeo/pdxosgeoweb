@@ -1,0 +1,24 @@
+---
+import site from '../data/site.json';
+---
+
+<section class="join" id="join">
+  <h2>Join Us!</h2>
+  <ul class="join__links">
+    {
+      site.joinLinks.map((link) => (
+        <li>
+          <a href={link.url}>
+            <img src={link.logo} alt="" loading="lazy" />
+            <span>{link.label}</span>
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<footer class="about" id="about">
+  <h2>About {site.title}</h2>
+  <p>{site.about}</p>
+</footer>

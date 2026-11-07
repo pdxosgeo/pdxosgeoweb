@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import MeetingArticle from '../components/MeetingArticle.astro';
+import MeetingCard from '../components/MeetingCard';
+import { getFeaturedMeeting, getMeetings, toCardData } from '../lib/content';
+
+const RECENT_COUNT = 4;
+
+const meetings = await getMeetings();
+const featured = getFeaturedMeeting(meetings);
+const recent = meetings
+  .filter((meeting) => meeting.id !== featured?.meeting.id)
+  .slice(0, RECENT_COUNT)
+  .map(toCardData);
+---
+
+<BaseLayout>
+  {
+    featured ? (
+      <MeetingArticle
+        meeting={featured.meeting}
+        eyebrow={featured.upcoming ? 'Next meeting' : 'Latest meeting'}
+        linkTitle
+      />
+    ) : (
+      <p class="empty">No meetings posted yet. Check the calendar for what's next!</p>
+    )
+  }
+
+  {
+    recent.length > 0 && (
+      <section class="section" id="past-meetings">
+        <div class="section__header">
+          <h2>More meetings</h2>
+          <a class="more-link" href="/meetings/">
+            Browse all {meetings.length} meetings →
+          </a>
+        </div>
+        <div class="card-grid">
+          {recent.map((meeting) => (
+            <MeetingCard meeting={meeting} />
+          ))}
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>

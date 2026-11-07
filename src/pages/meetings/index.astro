@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MeetingArchive from '../../components/MeetingArchive';
+import { getMeetings, toCardData } from '../../lib/content';
+
+const meetings = (await getMeetings()).map(toCardData);
+---
+
+<BaseLayout title="Meetings" description="Every PDXOSGeo meetup: talks, demos, and show and tell.">
+  <p class="eyebrow">Archive</p>
+  <h1 class="page-title">Meetings</h1>
+  <p class="lede">
+    Talks, demos, and show and tell from the Portland open source geo community. We usually meet on
+    the fourth Wednesday of the month.
+  </p>
+  <MeetingArchive client:load meetings={meetings} />
+</BaseLayout>
