@@ -6,7 +6,7 @@ The pdxosgeo.org site, built with [Astro](https://astro.build/) and React. Meeti
 
 You have two options:
 
-- **In the browser (no setup):** sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open `pdxosgeo/pdxosgeoweb`. You get forms for meetings, Maps of the Month, and site settings, with image uploads. The editor is configured in [`.pages.yml`](.pages.yml).
+- **In the browser (no setup):** sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open `pdxosgeo/pdxosgeoweb`. You get forms for meetings, Maps of the Month, and site settings, with image uploads. The editor is configured in [`.pages.yml`](.pages.yml). If you do not have permissions, contact @geografa for collab privieleges.
 - **In a text editor:** edit the files described below and open a pull request, same as before.
 
 ### Add a meeting
@@ -25,16 +25,16 @@ Write the post here. **Bold**, [links](https://maplibre.org), lists, and
 ![inline images](/images/posts/2026/another-image.png) all work.
 ```
 
-| Field | Required | Notes |
-| --- | --- | --- |
-| `title` | yes | |
-| `date` | yes | `YYYY-MM-DD` |
-| `time` | no | Defaults to `6:30pm` |
-| `location` | no | Defaults to Hot Lips Pizza @ the Natural Capital Center |
-| `image`, `imageAlt` | no | `/images/...` path or a full URL |
-| `summary` | no | Card blurb; defaults to the start of the post |
-| `youtube` | no | Video ID, e.g. `X-fewMkogAc` |
-| `draft` | no | `true` hides the post from the live site |
+| Field               | Required | Notes                                                   |
+| ------------------- | -------- | ------------------------------------------------------- |
+| `title`             | yes      |                                                         |
+| `date`              | yes      | `YYYY-MM-DD`                                            |
+| `time`              | no       | Defaults to `6:30pm`                                    |
+| `location`          | no       | Defaults to Hot Lips Pizza @ the Natural Capital Center |
+| `image`, `imageAlt` | no       | `/images/...` path or a full URL                        |
+| `summary`           | no       | Card blurb; defaults to the start of the post           |
+| `youtube`           | no       | Video ID, e.g. `X-fewMkogAc`                            |
+| `draft`             | no       | `true` hides the post from the live site                |
 
 The homepage features the next upcoming meeting, or the most recent one if nothing is scheduled. Every meeting gets its own page and shows up in the searchable archive at `/meetings/`.
 
