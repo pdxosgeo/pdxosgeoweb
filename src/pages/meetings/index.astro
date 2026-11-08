@@ -11,7 +11,7 @@ const meetings = (await getMeetings()).map(toCardData);
   <h1 class="page-title">Meetings</h1>
   <p class="lede">
     Talks, demos, and show and tell from the Portland open source geo community. We usually meet on
-    the fourth Wednesday of the month.
+    the fourth Wednesday of the month but check the Google Calendar in the sidebar for upcoming meetings.
   </p>
   <MeetingArchive client:load meetings={meetings} />
 </BaseLayout>

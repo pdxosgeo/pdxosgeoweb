@@ -148,9 +148,10 @@ h3 {
   padding: 0.55rem 0.85rem 0.7rem;
   color: #10262c;
   font-family: var(--font-heading);
-  font-weight: 400;
+  font-weight: 500;
   font-size: 0.95rem;
   text-decoration: none;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
