@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../data/site.json';
+
+const members = [
+  { login: 'rhodges', name: 'Ryan Hodges' },
+  { login: 'tchaddad', name: 'TC Haddad' },
+  { login: 'geografa', name: 'Rafa Gutierrez' },
+  { login: 'twelch', name: 'Tim Welch' },
+  { login: 'alexatodd', name: 'alexatodd' },
+  { login: 'caged', name: 'Justin Palmer' },
+];
+
+const events = [
+  {
+    year: '2014',
+    title: 'FOSS4G Portland',
+    blurb:
+      'The chapter hosted the international Free and Open Source Software for Geospatial conference. Local volunteers built the site theme, a visitor tour guide, a conference map, a map-gallery slideshow, and an archive of talk slides.',
+    links: [
+      { label: 'Conference site', href: 'https://2014.foss4g.org/' },
+      { label: 'Slides', href: 'https://github.com/pdxosgeo/foss4g2014-slides' },
+      { label: 'Conference map', href: 'https://pdxosgeo.github.io/foss4g-map/' },
+    ],
+  },
+  {
+    year: '2013',
+    title: 'Portland OSM building import',
+    blurb:
+      'pdxbldgimport documents the process for bringing Portland-area building footprints and addresses into OpenStreetMap. It is still the most-starred project in the GitHub org.',
+    links: [{ label: 'Repository', href: 'https://github.com/pdxosgeo/pdxbldgimport' }],
+  },
+  {
+    year: '2015',
+    title: 'Work Zone PDX',
+    blurb:
+      'A community mapping project in the org that tracks work zones around Portland.',
+    links: [{ label: 'Repository', href: 'https://github.com/pdxosgeo/workzonepdx' }],
+  },
+  {
+    year: 'Ongoing',
+    title: 'Monthly meetups & Map of the Month',
+    blurb:
+      'We usually meet on the fourth Wednesday for talks, demos, and show and tell. Map of the Month highlights a map that caught the group’s eye. Recaps live in the meetings archive.',
+    links: [
+      { label: 'Meetings', href: '/meetings/' },
+      { label: 'Map of the Month', href: '/map-of-the-month/' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="About"
+  description="The Portland chapter of OSGeo: history, members, and events from monthly meetups to FOSS4G 2014."
+>
+  <p class="eyebrow">Chapter</p>
+  <h1 class="page-title">About {site.title}</h1>
+  <p class="lede">{site.about}</p>
+
+  <section class="about-section prose">
+    <h2>History</h2>
+    <p>
+      PDXOSGeo formed in 2006 as the <a href="https://www.osgeo.org/local-chapters/pdxosgeo/">OSGeo local chapter</a> for Portland and the surrounding area. The group is free and open to anyone curious about
+      open source software, GIS, and shared learning, from first meetups to long-time contributors.
+    </p>
+    <p>
+      The <a href="https://github.com/pdxosgeo">pdxosgeo GitHub organization</a> dates to June 2012, the same week this website was first published. Code, conference leftovers, and mapping
+      experiments from the last decade and a half still live there.
+    </p>
+  </section>
+
+  <section class="about-section">
+    <h2>Members</h2>
+    <p class="about-note">
+      These are just a few of the public members in the GitHub org. The chapter is much larger than this list. But <a href="/join/">join us at a meeting or online</a> to get involved.
+    </p>
+    <ul class="member-grid">
+      {
+        members.map((member) => (
+          <li>
+            <a class="member-card" href={`https://github.com/${member.login}`}>
+              <img
+                src={`https://github.com/${member.login}.png?size=96`}
+                alt=""
+                width="48"
+                height="48"
+              />
+              <span class="member-card__name">{member.name}</span>
+              <span class="member-card__login">@{member.login}</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+
+  <section class="about-section">
+    <h2>Events &amp; projects</h2>
+    <ul class="event-list">
+      {
+        events.map((event) => (
+          <li class="event-card">
+            <p class="event-card__year">{event.year}</p>
+            <div>
+              <h3>{event.title}</h3>
+              <p>{event.blurb}</p>
+              <p class="event-card__links">
+                {event.links.map((link) => (
+                  <a class="more-link" href={link.href}>
+                    {link.label} →
+                  </a>
+                ))}
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</BaseLayout>

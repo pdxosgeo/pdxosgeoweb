@@ -85,6 +85,6 @@ The previous static HTML site README is preserved at [`docs/README-legacy-html.m
 ## Code layout
 
 - `src/content.config.ts`: content schemas (the fields above)
-- `src/pages/`: routes (`/`, `/meetings/`, `/meetings/<slug>/`, `/map-of-the-month/`)
+- `src/pages/`: routes (`/`, `/meetings/`, `/meetings/<slug>/`, `/map-of-the-month/`, `/join/`, `/about/`)
 - `src/components/`: Astro components plus the React `MeetingArchive` search and filter
 - `src/styles/global.css`: all styles

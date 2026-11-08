@@ -119,3 +119,4 @@ content:
           - { name: label, label: Label, type: string }
           - { name: url, label: URL, type: string }
           - { name: logo, label: Logo, type: image }
+          - { name: blurb, label: Blurb, type: text }

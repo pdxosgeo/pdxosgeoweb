@@ -6,8 +6,8 @@ const navItems = [
   { label: 'Home', href: '/' },
   { label: 'Meetings', href: '/meetings/' },
   { label: 'Map of the Month', href: '/map-of-the-month/' },
-  { label: 'Join', href: '/#join' },
-  { label: 'About', href: '/#about' },
+  { label: 'Join', href: '/join/' },
+  { label: 'About', href: '/about/' },
 ];
 
 const isActive = (href: string) =>
@@ -15,23 +15,32 @@ const isActive = (href: string) =>
 ---
 
 <header class="hero">
+  <nav class="navbar" aria-label="Main">
+    <ul>
+      {
+        navItems.map((item) => (
+          <li>
+            <a
+              href={item.href}
+              class={item.href === '/' ? 'navbar__home' : undefined}
+              aria-label={item.href === '/' ? 'Home' : undefined}
+              aria-current={isActive(item.href) ? 'page' : undefined}
+            >
+              {item.href === '/' ? (
+                <img src="/images/logo.png" alt="" width="30" height="30" />
+              ) : (
+                item.label
+              )}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </nav>
+
   <a class="hero__brand" href="/">
     <img src="/images/logo.png" alt="PDXOSGeo logo" width="100" height="101" />
     <span class="hero__title">{site.title}</span>
   </a>
   <p class="hero__tagline">{site.tagline}</p>
 </header>
-
-<nav class="navbar" aria-label="Main">
-  <ul>
-    {
-      navItems.map((item) => (
-        <li>
-          <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>
-            {item.label}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
-</nav>

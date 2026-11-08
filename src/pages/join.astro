@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import site from '../data/site.json';
+---
+
+<BaseLayout
+  title="Join"
+  description="Join PDXOSGeo on Slack, the Google Group, and GitHub."
+>
+  <p class="eyebrow">Community</p>
+  <h1 class="page-title">Join us</h1>
+  <p class="lede">
+    Come to a meetup, or hang out with us online between fourth Wednesdays. Slack is best for chat,
+    the Google Group for announcements, and GitHub if you want to help with the site.
+  </p>
+  <ul class="join-options">
+    {
+      site.joinLinks.map((link) => (
+        <li class="join-option">
+          <img src={link.logo} alt="" width="120" height="60" />
+          <div class="join-option__body">
+            <h2>{link.label}</h2>
+            <p>{link.blurb}</p>
+            <a class="more-link" href={link.url}>
+              Open {link.label} →
+            </a>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>

@@ -5,22 +5,25 @@
   "calendarEmbedUrl": "https://calendar.google.com/calendar/embed?height=300&wkst=1&ctz=America%2FLos_Angeles&showPrint=0&showTitle=0&mode=AGENDA&showNav=0&showDate=0&showTabs=0&src=NWQ4OGI4ZWQzMzQzNjI1OGRjYjdmMmZjNDZhM2VkMjcxOTUzYzllZjRmMWMyNWFlMjI5MTlmNWRhZjQ1Njk0Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23F6BF26",
   "defaultTime": "6:30pm",
   "defaultLocation": "Hot Lips Pizza @ the Natural Capital Center: 721 NW 9th Ave, Portland OR",
-  "about": "The Portland chapter of OSGeo is focused on learning and teaching about open data, maps, and spatial applications. We like code and good conversation.",
+  "about": "The Portland chapter of OSGeo is focused on learning and teaching about open data, maps, and spatial applications. We like good conversations about solving problems with open source tools.",
   "joinLinks": [
     {
       "label": "Slack",
       "url": "https://thespatialcommunity.slack.com/",
-      "logo": "/images/logos/slack.png"
+      "logo": "/images/logos/slack.png",
+      "blurb": "Chat with PDXOSGeo folks and a wider geospatial crowd in The Spatial Community Slack. It is the fastest way to ask a question, share a map, or see who is heading to the next meetup."
     },
     {
       "label": "Google Group",
       "url": "https://groups.google.com/g/pdx-osgeo",
-      "logo": "/images/logos/google.png"
+      "logo": "/images/logos/google.png",
+      "blurb": "The pdx-osgeo mailing list is where meeting announcements, recaps, and longer threads live. Subscribe if you want the monthly reminder in your inbox without hanging out in chat."
     },
     {
       "label": "GitHub",
       "url": "https://github.com/pdxosgeo/pdxosgeoweb",
-      "logo": "/images/logos/github.png"
+      "logo": "/images/logos/github.png",
+      "blurb": "This website is open source. File an issue, suggest a Map of the Month, or send a pull request if you want to help keep the site current."
     }
   ]
 }
