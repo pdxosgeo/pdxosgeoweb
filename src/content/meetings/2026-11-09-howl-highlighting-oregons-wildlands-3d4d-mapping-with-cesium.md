@@ -8,7 +8,7 @@ draft: false
 ---
 Special guest Ricardo Morin will talk about "Highlighting Oregon’s WildLands" (HOWL), a recap of his presentation in Boston. More information at Ricardo's blog here: [http://blog.rikitraki.com/FOSS4G-update/](http://blog.rikitraki.com/FOSS4G-update/) and in the full abstract below.
 
-++++++++++++++
+++++++++
 
 HOWL: 3D/4D mapping and visualization of Oregon’s wildlands
 
