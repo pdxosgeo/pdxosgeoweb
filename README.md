@@ -6,7 +6,7 @@ The pdxosgeo.org site, built with [Astro](https://astro.build/) and React. Meeti
 
 You have two options:
 
-- **In the browser (no setup):** sign in at [app.pagescms.org](https://app.pagescms.org) with GitHub and open `pdxosgeo/pdxosgeoweb`. You get forms for meetings, Maps of the Month, and site settings, with image uploads. The editor is configured in [`.pages.yml`](.pages.yml). If you do not have permissions, contact @geografa for collab privieleges.
+- **In the browser (no setup):** sign in at [app.pagescms.org/pdxosgeo/](https://app.pagescms.org/pdxosgeo/pdxosgeoweb/) with GitHub and open `pdxosgeo/pdxosgeoweb`. You get forms for meetings, Maps of the Month, and site settings, with image uploads. The editor is configured in [`.pages.yml`](.pages.yml). If you do not have permissions, contact @geografa for collab privieleges.
 - **In a text editor:** edit the files described below and open a pull request, same as before.
 
 ### Add a meeting
