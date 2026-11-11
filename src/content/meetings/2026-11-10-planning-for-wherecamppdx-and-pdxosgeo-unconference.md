@@ -12,5 +12,5 @@ WhereCampPDX is just around the corner (Halloween!), so there should be plenty t
 
 - WhereCampPDX volunteering, sponsorship, etc.
 - Special guests - we've invited a few!
-- Bring your lightning talk ideas for the unconference prep https://www.sli.do/home
+- Bring your lightning talk ideas for the unconference prep [https://www.sli.do/home](https://www.sli.do/home)
 
