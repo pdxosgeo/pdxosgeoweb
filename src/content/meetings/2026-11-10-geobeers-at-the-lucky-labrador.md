@@ -1,6 +1,6 @@
 ---
 title: GeoBeers at the Lucky Labrador
-date: 2026-11-10
+date: 2014-06-18
 location: " Lucky Labrador Brew Pub 915 SE Hawthorne Boulevard"
 image: /images/luckylab_logo.jpg
 imageAlt: Lucky Lab Logo
