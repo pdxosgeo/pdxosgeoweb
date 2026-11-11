@@ -4,9 +4,7 @@ date: 2016-02-17
 location: Portland State University Cramer Hall - room 409
 draft: false
 ---
-This month welcomes Tim Welch and Katie Urey who will be combining two of their favorite things - Stories and Maps. Pizza will be provided. BYOB as always.
-
----
+This month welcomes Tim Welch and Katie Urey who will be combining two of their favorite things - Stories and Maps. 
 
 The Power of Story
 
