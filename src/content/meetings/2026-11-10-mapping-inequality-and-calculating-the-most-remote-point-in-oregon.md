@@ -2,6 +2,7 @@
 title: Mapping Inequality, and Calculating the most remote point in Oregon
 date: 2019-06-19
 location: Ecotrust Alder room
+image: /images/mapping_inequality.png
 draft: false
 ---
 We'll check out "[Mapping Inequality](https://dsl.richmond.edu/panorama/redlining/)", a project out of University of Richmond, University of Maryland, Virginia Tech and John Hopkins. The project uses Leaflet and CartoDB to display georeferenced maps and redlining data from in the late 30's - with a focus on redlining and abrasive, unfiltered racist language that has directly influenced the formation of neighborhoods today.
