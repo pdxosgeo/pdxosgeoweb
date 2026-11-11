@@ -1,5 +1,5 @@
 ---
-title: OpenAerialMap, Mapknitter, JournalMap
+title: OpenAerialMap & Mapknitter
 date: 2016-01-20
 location: Portland State University Cramer Hall - room 409
 image: /images/openaerialmap.png
