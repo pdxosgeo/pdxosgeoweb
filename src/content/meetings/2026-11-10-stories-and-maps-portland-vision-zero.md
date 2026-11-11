@@ -2,6 +2,8 @@
 title: "Stories and Maps: Portland Vision Zero"
 date: 2016-02-17
 location: Portland State University Cramer Hall - room 409
+image: /images/vision_zero.png
+imageAlt: Vision Zero homepage screen
 draft: false
 ---
 This month welcomes Tim Welch and Katie Urey who will be combining two of their favorite things - Stories and Maps. 
